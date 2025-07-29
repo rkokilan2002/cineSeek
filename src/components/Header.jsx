@@ -22,7 +22,7 @@ export const Header = () => {
               <NavLink to="/movies/popular" className="nav-link ">Popular</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/movies/upcomming" className="nav-link ">Upcoming</NavLink>
+              <NavLink to="/movies/upcoming" className="nav-link ">Upcoming</NavLink>
             </li>
           </ul>
 

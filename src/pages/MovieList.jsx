@@ -2,11 +2,13 @@ import { useEffect } from "react"
 import { useTitle } from "../hooks/useTitle"
 import { useNavigate } from "react-router-dom";
 import { Card } from "../components";
+import { useFetch } from "../hooks/useFetch";
 
-export const MovieList = ({title}) => {
+export const MovieList = ({title,apiUrl}) => {
+  const {data: movies=[]} = useFetch(apiUrl);
   useTitle(title);
   const navigator = useNavigate();
-  return (
+  return ( 
     <div>
       <main className="container">
         <h5 className="text-danger py-2">{title}</h5>
@@ -17,18 +19,16 @@ export const MovieList = ({title}) => {
             <p className="text-center lead">Enjoy</p>
 
             <div className="d-flex justify-content-center">
-              <button className="btn btn-secondary" onClick={()=>{navigator("movies/upcomming")}}>Explore</button>
+              <button className="btn btn-secondary" onClick={()=>{navigator("movies/upcoming")}}>Explore</button>
 
             </div>
           </div>
         :""}
 
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 my-2">
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          {movies.map((movie) => {
+            return <Card key={movie.id}/>
+          })} 
         </div>
       </main>
     </div>
