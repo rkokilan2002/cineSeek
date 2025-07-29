@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useTitle } from "../hooks/useTitle"
 import { useNavigate } from "react-router-dom";
+import { Card } from "../components";
 
 export const MovieList = ({title}) => {
   useTitle(title);
@@ -11,7 +12,7 @@ export const MovieList = ({title}) => {
         <h5 className="text-danger py-2">{title}</h5>
         {title == "Home" ? 
           <div className="bg-body-tertiary p-5 mb-5 border">
-            <h3 className="text-center text-primary">Welcome to CineSeek</h3>
+            <h3 className="text-center welcome">Welcome to CineSeek</h3>
             <p className="text-center lead">You can discover movies from the great collection of ours.</p>
             <p className="text-center lead">Enjoy</p>
 
@@ -21,6 +22,14 @@ export const MovieList = ({title}) => {
             </div>
           </div>
         :""}
+
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 my-2">
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+        </div>
       </main>
     </div>
   )
