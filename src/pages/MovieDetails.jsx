@@ -3,6 +3,7 @@ import { useTitle } from "../hooks/useTitle"
 import { useEffect, useState } from "react";
 import react from "../assets/react.svg"
 import "../App.css"
+import { timeConverter } from "../utils/timeConverter";
 
 
 export const MovieDetails = ({title}) => {
@@ -53,7 +54,7 @@ export const MovieDetails = ({title}) => {
             <tbody>
               <tr>
                 <th>Run-time</th>
-                <td>{movie.runtime}</td>
+                <td>{timeConverter(movie.runtime)}</td>
               </tr>
               <tr>
                 <th>Release-Date</th>
