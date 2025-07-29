@@ -50,7 +50,7 @@ export const MovieDetails = ({title}) => {
             <i className="bi bi-star-fill text-warning"></i> <span className="text-secondary">{movie.vote_average}</span> | <i className="bi bi-people-fill text-primary"></i> <span className="text-secondary">{movie.vote_count}</span>
           </p>
 
-          <table className="table table-bordered w-25 mt-2">
+          <table className="table table-borderless w-25 mt-2">
             <tbody>
               <tr>
                 <th>Run-time</th>
@@ -70,6 +70,8 @@ export const MovieDetails = ({title}) => {
               </tr>
             </tbody>
           </table>
+
+          <a href={`https://www.imdb.com/title/${movie.imdb_id}`} className="btn btn-sm btn-warning" target="_blank">Check on IMDB</a>
         </div>
       </div>
     </main>
